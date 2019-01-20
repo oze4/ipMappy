@@ -7,7 +7,7 @@ class IpStack:
     - Methods that get API data always return JSON (not XML), unless specified
     """
 
-    """ private class attribute """
+    # private class attribute
     __base_url = "http://api.ipstack.com"
 
     def __init__(self, api_key):
