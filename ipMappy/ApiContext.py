@@ -3,8 +3,8 @@ import requests
 
 class IpStack:
     """
-    - Api client for https://ipstack.com
-    - Methods that get API data always return JSON (not XML), unless specified
+    Api client for https://ipstack.com
+    Methods that get API data always return JSON
     """
 
     # private class attribute
@@ -17,8 +17,7 @@ class IpStack:
 
     def __deserialize_api_response(self, response):
         """
-        - Takes API response (it is in JSON string format) and de-serializes it to our object
-        - Private instance method
+        Takes API response (it is in JSON string format) and de-serializes it to our object
         :param response: The web response from IpStack API
         """
         self.ip = response['ip']
@@ -33,20 +32,15 @@ class IpStack:
         self.zip = response['zip']
         self.latitude = response['latitude']
         self.longitude = response['longitude']
-        self.location = IpStackLocation(
-            response['location']['geoname_id'],
-            response['location']['capital'],
-            response['location']['country_flag'],
-            response['location']['country_flag_emoji'],
-            response['location']['country_flag_emoji_unicode'],
-            response['location']['calling_code'],
-            response['location']['is_eu'],
-            response['location']['languages']
-        )
+        self.location = IpStackLocation(response['location']['geoname_id'], response['location']['capital'],
+                                        response['location']['country_flag'], response['location']['country_flag_emoji'],
+                                        response['location']['country_flag_emoji_unicode'],
+                                        response['location']['calling_code'], response['location']['is_eu'],
+                                        response['location']['languages'])
 
     def get_current_ip_info(self):
         """
-        - The 'check' part in the URL below grabs the current IP
+        The 'check' part in the URL below grabs the current IP
         :return: json string
         """
         res = requests.get(f'{self.__base_url}/check?access_key={self.ApiKey}').json()
