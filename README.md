@@ -8,21 +8,21 @@ The core API module relies on https://ipstack.com - so you will need an API key 
 
 ```python
 
-from ipMappy.providers import *
+import ipMappy
 
 my_api_key = "abcdefg"
 
-# main ipMappy object
-ipstack = IpStack(my_api_key)
+# Initialize connection to https://ipstack.com
+ip_stack = ipMappy.IpStack(my_api_key)
 
 # Grab public info about IP or host - the IpStack API will resolve host names for us
-google_info = ipstack.get_ip_info('google.com')
+google_info = ip_stack.get_ip_info('google.com')
 print(google_info.ip)
 print(google_info.latitude)
 print(google_info.longitude)
 
 # Grab public IP info about the network which the request was sent from
-current_ip_info = ipstack.get_current_ip_info()
+current_ip_info = ip_stack.get_current_ip_info()
 print(current_ip_info)
 
 ```
