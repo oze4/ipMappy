@@ -27,10 +27,8 @@ print(ipstack.ip)
 print(ipstack.latitude)
 print(ipstack.longitude)
 
-# grab public IP info about the network -
-# you are sending the request from
+# Grab public IP info about the network which the request was sent from
 current_ip_info = ipstack.get_current_ip_info()
-# Same as above, this method returns a JSON string as well as -
-# de-serializing the JSON into our instance attributes
+# Same as above, this method returns a JSON string as well as de-serializing the JSON into our instance attributes
 ```
 
