@@ -6,7 +6,7 @@ The core API module relies on https://ipstack.com - so you will need an API key 
 
 ###### Example:
 
-```Python
+```python
 from ipMappy.ApiContext import IpStack
 
 my_api_key = "abcdefg"
