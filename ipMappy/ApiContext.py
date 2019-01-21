@@ -19,6 +19,7 @@ SOFTWARE.
 """
 
 import requests
+import folium
 
 
 class IpStack:
@@ -70,6 +71,12 @@ class IpStack:
         res = requests.get(f'{self.__base_url}/{ip_or_hostname}?access_key={self.ApiKey}')
         self.__deserialize_api_response(res)
         return res.json()
+
+    def do_map_ip(self):
+        """uses Folium to map lat/long of gathered IP"""
+        if self.latitude is None or self.longitude is None:
+            raise NotImplementedError("Attribute latitude OR longitude is None!")
+        mappy = folium.Map(location=[self.latitude, self.longitude])
 
 
 class IpStackLocation:
