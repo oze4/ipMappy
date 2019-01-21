@@ -1,4 +1,4 @@
-### ~IN PROGRESS!~
+### -IN PROGRESS!-
 
 Python package to gather metadata about public IP addresses, and then plot them using Florium (eventually)
 
