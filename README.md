@@ -1,6 +1,6 @@
 ### -IN PROGRESS!-
 
-Python package to gather metadata about public IP addresses, and then plot them using Florium (eventually)
+Python package to gather metadata about public IP addresses, and then plot them using Folium (eventually)
 
 The core API module relies on https://ipstack.com - so you will need an API key from there (for now)
 
