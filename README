@@ -7,7 +7,6 @@ The core API module relies on https://ipstack.com - so you will need an API key 
 ###### Example:
 
 ```Python
-
 from ipMappy.ApiContext import IpStack
 
 my_api_key = "abcdefg"
@@ -33,6 +32,4 @@ print(ipstack.longitude)
 current_ip_info = ipstack.get_current_ip_info()
 # Same as above, this method returns a JSON string as well as -
 # de-serializing the JSON into our instance attributes
-
-
 ```
