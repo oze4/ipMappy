@@ -23,14 +23,14 @@ SOFTWARE.
 """
 
 import requests
-from ipMappy.ip_info import MappyJSON
+from ipMappy.data import MappyJSON
 
 
 class IpStack:
     """Api client for https://ipstack.com
     Methods that get API data always return JSON"""
 
-    __base_url = "http://api.ipstack.com"
+    __base_IpStack_url = "http://api.ipstack.com"
 
     def __init__(self, api_key):
         if not isinstance(api_key, str):
@@ -39,11 +39,11 @@ class IpStack:
 
     def get_current_ip_info(self):
         """:return: MappyJSON object (JSON as dict)"""
-        res = requests.get(f'{self.__base_url}/check?access_key={self.ApiKey}')
+        res = requests.get(f'{self.__base_IpStack_url}/check?access_key={self.ApiKey}')
         return MappyJSON(res.json())
 
     def get_ip_info(self, ip_or_hostname):
         """:param ip_or_hostname: IP address or hostname of target host - the IpStack API resolves the hostname for us
         :return: MappyJSON object (JSON as dict)"""
-        res = requests.get(f'{self.__base_url}/{ip_or_hostname}?access_key={self.ApiKey}')
+        res = requests.get(f'{self.__base_IpStack_url}/{ip_or_hostname}?access_key={self.ApiKey}')
         return MappyJSON(res.json())

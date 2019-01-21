@@ -23,10 +23,9 @@ SOFTWARE.
 """
 
 
-from ipMappy.api import IpStack
-
+import ipMappy
 
 # instantiate object
-ips = IpStack("83e165094b4d4f05f6aa904c4b6484db")
+ips = ipMappy.IpStack("your_IpStack_api_key_here")
 current_ip_info = ips.get_current_ip_info()
-print(type(current_ip_info))
+print(current_ip_info.ip)

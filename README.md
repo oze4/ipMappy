@@ -8,7 +8,7 @@ The core API module relies on https://ipstack.com - so you will need an API key 
 
 ```python
 
-from ipMappy.api import *
+from ipMappy.providers import *
 
 my_api_key = "abcdefg"
 
